@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Always Display</string>
+    <string name="media_listener_label">音乐监听服务</string>
+    <string name="no_music_playing">暂无音乐播放</string>
+    <string name="open_music_app">打开音乐App开始播放</string>
+    <string name="no_lyrics">暂无歌词</string>
+    <string name="enable_notification_listener">请开启通知监听权限以获取平台音乐信息</string>
+    <string name="go_to_settings">前往设置</string>
+    <string name="settings">设置</string>
+    <string name="screen_always_on">屏幕常亮</string>
+    <string name="vinyl_animation">唱片动画</string>
+    <string name="highlight_lyrics">高亮歌词</string>
+    <string name="time_format_24h">24小时制</string>
+    <string name="notification_listener_permission">通知监听权限</string>
+    <string name="lyric_source">歌词来源</string>
+    <string name="font_size">字体大小</string>
+    <string name="timer_preset_1m">1分钟</string>
+    <string name="timer_preset_5m">5分钟</string>
+    <string name="timer_preset_10m">10分钟</string>
+    <string name="timer_preset_25m">25分钟</string>
+    <string name="timer_preset_custom">自定义</string>
+    <string name="timer_start">开始</string>
+    <string name="timer_pause">暂停</string>
+    <string name="timer_reset">重置</string>
+</resources>
