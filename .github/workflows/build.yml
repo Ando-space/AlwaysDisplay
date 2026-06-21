@@ -21,23 +21,18 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v4
 
-    - name: Create gradle wrapper jar
-      working-directory: AlwaysDisplay
+    - name: Download Gradle Wrapper JAR
+      working-directory: AlwaysDisplay/gradle/wrapper
       run: |
-        mkdir -p gradle/wrapper
-        cat > build_gradle_wrapper.sh << 'SCRIPT'
-        # Download gradle wrapper jar
-        GRADLE_VERSION=8.11.1
-        wget -q "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" -O /tmp/gradle.zip
-        unzip -q /tmp/gradle.zip -d /tmp/
-        /tmp/gradle-${GRADLE_VERSION}/bin/gradle wrapper --gradle-version ${GRADLE_VERSION}
-        SCRIPT
-        chmod +x build_gradle_wrapper.sh
-        bash build_gradle_wrapper.sh
+        curl -sL "https://raw.githubusercontent.com/gradle/gradle/v8.11.1/gradle/wrapper/gradle-wrapper.jar" -o gradle-wrapper.jar
+
+    - name: Make gradlew executable
+      working-directory: AlwaysDisplay
+      run: chmod +x gradlew
 
     - name: Build Debug APK
       working-directory: AlwaysDisplay
-      run: ./gradlew assembleDebug
+      run: ./gradlew assembleDebug --no-daemon --stacktrace
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
